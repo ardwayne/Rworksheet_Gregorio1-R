@@ -1,0 +1,153 @@
+---
+title: "Rworksheet_Gregorio#3a"
+output: pdf_document
+date: "2023-10-10"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#1 There is a built-in vector LETTERS contains the uppercase letters of the alphabet and letters which contains the lowercase letters of the alphabet.
+
+UppercaseLetter <- LETTERS [1:26]
+UppercaseLetter
+
+LowercaseLetter <- letters [1:26]
+LowercaseLetter
+
+#a. You need to produce a vector that contains the first 11 letters.
+first_11_letters <- LETTERS[1:11]
+first_11_letters
+
+#b. Produce a vector that contains the odd numbered letters.
+oddnumber <- LETTERS[c(TRUE, FALSE)]
+oddnumber
+
+#c. Produce a vector that contains the vowels
+
+
+vowels <- LETTERS[c(1, 5, 9, 15, 21)]
+vowels
+
+#d. Produce a vector that contains the last 5 lowercase letters.
+
+LowerCaseLetter <-  letters [22:26]
+LowerCaseLetter
+
+#e. Produce a vector that contains letters between 15 to 24 letters in lowercase.
+
+LowerCaseLetter <- letters  [c(15:24)]
+LowerCaseLetter
+
+#2. Create a vector(not a dataframe) with the average temperatures in April for Tugue- garao City, Manila, Iloilo City, Tacloban, Samal Island, and Davao City. The average temperatures in Celcius are 42, 39, 34, 34, 30, and 27 degrees.
+
+
+
+
+#2a. What is the R code and its result for creating a character vector for the city/town of Tuguegarao City, Manila, Iloilo City, Tacloban,Samal Island, and Davao City? Name the object as city. The names should follow the same order as in the instruction.
+
+average_city <- c("Tuguegarao City", "Manila", "Iloilo City", "Tacloban", "Samal Island", "Davao City")
+
+average_city
+
+
+
+#Output  "Tuguegarao City" "Manila" "Iloilo City"  "Tacloban"    "Samal Island" "Davao City
+
+#2b. The average temperatures in Celcius are 42, 39, 34, 34, 30, and 27 degrees. Name the object as temp. Write the R code and its output. Numbers should also follow what is in the instruction.
+
+average_temperatures <- c(42, 39, 34, 34, 30, 27)
+average_temperatures
+
+#output "42" "39" "34" "34" "30" "27"
+
+#2c. Create a dataframe to combine the city and the temp by using ‘data.frame(). What the R code and its result?
+
+#the result it shows the City and the Temperature Celcius 
+
+city_temp <- data.frame(City = city, Temperature = temp)
+city_temp_dataframe
+
+#2d
+names(city_temp_dataframe) <- c("City", "Temperature")
+city_temp_dataframe
+
+#2e
+
+str(city_temp)
+# it displayed the output with 6 obs. of 2 variables and the class of it.
+
+#2f
+row34 <- city_temp [3:4,]
+row34
+
+#2g
+Hightemp <- city_temp[which.max(city_temp$Temperature),]
+Hightemp
+
+lowtemp <- city_temp[which.min(city_temp$Temperature),]
+lowtemp
+
+#3a
+ma_trix <- matrix(c(1:8, 11:14), nrow = 3)
+ma_trix
+
+#3b
+ma_trix <- ma_trix * 2
+ma_trix
+
+#3c
+row_2 <- ma_trix[2, ]
+row_2
+
+#3d
+subset_ma_trix <- ma_trix[1:2, 3:4]
+subset_ma_trix
+
+#3e
+row_3_subset <- ma_trix[3, 2:3]
+row_3_subset
+
+#3f
+col_4 <- ma_trix[, 4]
+col_4
+
+#3g
+rownames(ma_trix) <- c("isa", "dalawa", "tatlo")
+colnames(ma_trix) <- c("uno", "dos", "tres", "quatro")
+ma_trix
+
+#3h
+ma_trix_reshaped <- matrix(mat, nrow = 6, ncol = 2)
+ma_trix_reshaped
+
+#USING ARRAYS
+
+#4 An array contains 1, 2, 3, 6, 7, 8, 9, 0, 3, 4, 5, 1
+
+#4a
+array_num <- array(c(1, 2, 3, 6, 7, 8, 9, 0, 3, 4, 5, 1),c(2,4,3))
+
+array_num
+
+#4b
+dim(array_num)
+
+#4c
+colnames(array_num) <- c("A","B","C","D")
+
+array_num
+
+
+
+
+
+
+
+
+w
+```
+
+
