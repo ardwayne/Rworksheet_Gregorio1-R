@@ -1,0 +1,67 @@
+---
+title: "Rworksheet_Gregorio#4a"
+output: pdf_document
+date: "2023-10-25"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#1 The table below shows the data about shoe size and height. Create a data frame.
+
+#a. Describe the data.
+shoe_data1 <- data.frame(
+  "ShoeSize" = c(6.5, 9.0, 8.5, 8.5, 10.5, 7.0, 9.4, 9.0, 13.0, 7.5, 10.5, 8.5, 12.0, 10.5),
+  "Height" = c(66.0, 68.0, 64.5, 65.0, 70.0, 64.0, 70.0, 71.0, 72.0, 64.0, 74.5, 67.0, 71.0, 71.0),
+  "Gender" = c("F", "F", "F", "F", "M", "F", "F", "F", "M", "F", "M", "M", "M", "M")
+)
+
+shoe_data2 <- data.frame(
+  "ShoeSize" = c(13.0, 11.5, 8.5, 5.0, 10.0, 6.5, 7.5, 8.5, 10.5, 8.5, 10.5, 11.0, 9.0, 13.0),
+  "Height" = c(77.0, 72.0, 59.0, 62.0, 72.0, 66.0, 64.0, 67.0, 73.0, 69.0, 72.0, 70.0, 69.0, 70.0),
+  "Gender" = c("M", "M", "F", "F", "M", "F", "F", "M", "M", "F", "M", "M", "M", "M")
+)
+
+
+combined_view <- rbind(shoe_data1, shoe_data2)
+View(combined_view)
+
+#b Create a subset by males and females with their corresponding shoe size and height. What its result? Show the R scripts.
+
+males <- subset(combined_view, Gender == "M")
+females <- subset(combined_view, Gender == "F")
+
+males
+females
+
+#output
+# 9.071429
+# 68.42857
+
+#c
+mean_shoe_size <- mean(combined_view$ShoeSize)
+mean_height <- mean(combined_view$Height)
+
+mean_shoe_size
+mean_height
+
+#d
+correlation <- cor(combined_view$ShoeSize, combined_view$Height)
+correlation
+
+#2
+months <- c("March", "April", "January", "November", "January",
+            "September", "October", "September", "November", "August",
+            "January", "November", "November", "February", "May", "August",
+            "July", "December", "August", "August", "September", "November", "February", "April")
+            
+factor_months_vector <- factor(months)
+factor_months_vector
+
+#3
+summary(months)
+summary(factor_months_vector)
+
+
