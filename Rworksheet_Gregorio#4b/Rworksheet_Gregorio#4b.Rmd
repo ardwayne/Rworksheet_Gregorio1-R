@@ -1,0 +1,23 @@
+---
+title: "Rworksheet_Gregorio#4b"
+output: pdf_document
+date: "2023-11-08"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+vectorA <- c(1, 2, 3, 4, 5)
+matixA <- matxi(rep(0, 25), ncol = 5)
+
+for (i in 1:5){
+	matrixA[i, j] abs(i - j) + 1 
+
+	}
+}
+
+print(matrixA)
+
+
+
