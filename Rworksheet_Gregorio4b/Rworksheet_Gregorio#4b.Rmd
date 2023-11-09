@@ -1,0 +1,147 @@
+---
+title: "Rworksheet_Gregorio#4b"
+output: pdf_document
+date: "2023-11-09"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#vectorZero <- c(0,0,0,0,0)
+#matrixVec <- c(vectorZero, 5,5)
+#vectorA <-c(1,2,3,4,5)
+
+
+vectorA <- c(1,2,3,4,5)
+
+
+zero_Matrix <- matrix(0, nrow = 5, ncol = 5)
+
+
+print(vectorA)
+print(zero_Matrix)
+
+```
+2.2. Print the string "*" using for() function. The output should be the same as shown
+in Figure
+
+
+
+```{r name, echo = TRUE}
+
+
+##33
+for(i in 1:5){
+  aste_risk <- rep("*", i)
+  print(aste_risk)
+ 
+}
+
+
+```
+
+3.Get an input from the user to print the Fibonacci sequence starting from the 1st input up to 500. Use repeat and break statements. Write the R Scripts and its output.
+
+```{r name, echo = TRUE}
+# Function to calculate the Fibonacci sequence
+fibonacci <- function(n) {
+ if (n <= 1)
+    return(n)
+ else
+    return(fibonacci(n-1) + fibonacci(n-2))
+}
+
+# Get user input
+cat("Enter a number: ")
+input <- readLines(n=1)
+
+# Convert input to numeric
+input_num <- as.numeric(input)
+
+# Check if input is valid
+if (is.na(input_num)) {
+ cat("Invalid input. Please enter a valid number.")
+} else {
+ # Print the Fibonacci sequence
+ cat("Fibonacci sequence: \n")
+ i <- 1
+ while (i <= 500) {
+    if (i < input_num) {
+      i <- i + 1
+    } else {
+      cat(fibonacci(i), "\n")
+      i <- i + 1
+    }
+ }
+}
+
+
+
+```
+
+4.a What is the R script for importing an excel or a csv file? Display the first 6 rows of
+the dataset? Show your codes and its result
+
+```{r name, echo = TRUE}
+lastData <- read.csv("householdData.csv")
+head(lastData)
+getwd()
+
+
+```
+
+4.b Create a subset for gender(female and male). How many observations are there in
+Male? How about in Female? Write the R scripts and its output.
+```{r name, echo = TRUE}
+
+
+
+male_data <- subset(data, gender == "Male")
+female_data <- subset(data, gender == "Female")
+
+
+nrow(male_data)
+nrow(female_data)
+
+
+data <- data.frame(name = c("Alice", "Bob", "Cathy", "David", "Eva"),
+                   gender = c("Female", "Male", "Female", "Male", "Female"),
+                   age = c(25, 30, 35, 40, 45))
+
+
+male_data <- subset(data, gender == "Male")
+female_data <- subset(data, gender == "Female")
+
+ 
+nrow(male_data)
+nrow(female_data)
+
+```
+4.e Create a graph for the number of males and females for Household Data. Use plot(),
+chart type = barplot. Make sure to place title, legends, and colors. Write the R scripts and
+its result.
+```{r name, echo = TRUE}
+
+totalMaleFemale <-table(lastData$Gender)
+barplot(totalMaleFemale,
+        main = "number of males and females",
+        xlab = "gender",
+        ylab = "count",
+        col = c("red", "black"),
+        legend.text = rownames(totalMaleFemale),
+        beside = TRUE)
+       
+
+
+```
+#5
+library(plotrix)
+income <- c(60,10,5,25)
+labels <- c("Food", "Electricity", "Savings", "Miscellaneous")
+colors <- c("#FDB813", "#5BC0EB", "#9BC53D", "#FF6F91")
+pct <- round((income/sum(income))*100,2)
+pie3D(pct,labels=labels, explode=0.05, col=colors, main="Monthly Income Allocation")
+
+
+!Piechart of Dela Cruz Family's Monthly Income Allocation](https://i.imgur.com/pRKVYyZ.png)
