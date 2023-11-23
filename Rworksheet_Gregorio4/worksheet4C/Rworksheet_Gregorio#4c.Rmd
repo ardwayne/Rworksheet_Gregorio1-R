@@ -1,0 +1,49 @@
+---
+title: "Rworksheet_Gregorio#4c"
+author: "Ardwayne B. Gregorio  2 - C"
+date: "2023-11-23"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+mpg <- read.csv(file = "mpg.csv", header = T, sep = ",")
+mpg
+```
+
+b. Which variables from mpg dataset are categorical?
+```{r}
+is_cont <- sapply(mpg, is.character)
+cont_vars <- names(mpg)[is_cont]
+cont_vars
+```
+
+c.Which are continuos variables?
+```{r}
+is_cont <- sapply(mpg, is.numeric)
+cont_vars <- names(mpg)[is_cont]
+cont_vars
+```
+
+2.
+a.
+```{r}
+library(dplyr)
+
+manufacturers_unique_models <- mpg %>%
+    group_by(manufacturer) %>%
+    summarize(unique_models = n_distinct(model))
+
+print(manufacturers_unique_models)
+```
+
+b.
+```{r}
+
+
+
+```
+
